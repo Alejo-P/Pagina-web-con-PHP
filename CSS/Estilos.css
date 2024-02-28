@@ -492,7 +492,7 @@ html{
     overflow: hidden; /* Oculta cualquier parte de la imagen que se extienda más allá del borde redondeado */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.9); /* Ajusta el valor de acuerdo a la intensidad deseada */ 
 }
-.col h1{
+.col h2{
     color: #ffffff;
     font-size: 3em;
 }
@@ -977,9 +977,7 @@ button {
 .eliminar:hover {
     background-color: #dc1010;
 }
-.Volver:hover {
-    background-color: #158209;
-}
+
 
 #Menu {
     padding: 10px;

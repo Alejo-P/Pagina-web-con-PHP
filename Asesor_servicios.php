@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/Estilos.css">
     <link rel="shortcut icon" href="Imagenes/Icono.jpeg" type="image/x-icon">
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="JS/Script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Panel de Técnico-Full Prestige</title>
+    <title>Asesor de Servicio-Full Prestige</title>
 </head>
 <body>
    
     <section id="encabezado" class="encabezado">    
         <div class="logo">
             <img src="Imagenes/Logo.jpg" alt=""><br>
-            <h1>Panel del Técnico</h1><br>
+            <h1>Panel del Asesor de servicio</h1><br>
 
         </div> 
 
@@ -27,19 +27,22 @@
                 <select id="Menu">
                 
                    <option value="opcion1">"Elija una opción..."</option>
-                   <option value="Ver mis tareas">Ver mis tareas</option>
-                   <option value="Stock">Productos en stock</option>
+                   <option value="Receptar">Recepcion de vehiculos</option>
+                   <option value="Asignar">Asignar Tareas</option>
+                   <option value="Historial">Historial de Clientes</option>
+            
                    
                 </select>
         
             </div>
             <div class="Botones">
                 <button class="buscar" onclick="buscar()">Buscar</button>
-                <button class="eliminar" onclick="eliminar()">Finalizar Tarea</button> 
+                <button class="eliminar" onclick="eliminar()">Eliminar</button> 
                 
             </div>
-            <button class="Volver" onclick="Casa()">Cerrar Sesión</button>
+            <button class="Volver" onclick="Casa()">Cerrar Sesión</button> 
     </section>
+    
     <script>
         function Casa(){
             window.location.href="Home.html";
@@ -49,7 +52,7 @@
             console.log(opcionSeleccionada);
             if (opcionSeleccionada !== "") {
                 $.ajax({
-                    url: 'Panel_tecnico.php',
+                    url: 'acceso_asesorphp',
                     type: 'POST',
                     data: {opcion: opcionSeleccionada},
                     success: function(response) {
@@ -62,6 +65,11 @@
             }
         }
     </script> 
+    
+    
+   
+    
+    
 </body>
 
 </html>

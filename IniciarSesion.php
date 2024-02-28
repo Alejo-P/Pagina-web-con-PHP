@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Datos de conexión a la base de datos
     $servername = "localhost";
     $username = "root";
-    $password = "2004";
+    $password = "123456";
     $database = "base_pagina";
 
     // Crear conexión
@@ -47,18 +47,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Redirigir al usuario a la página correspondiente
             header('Location: Clientes.php');
         }
-        else if ($tipo_usuario == "Administrador"){
+        elseif ($tipo_usuario == "Administrador"){
             // Redirigir al usuario a la página correspondiente
             header('Location: Admin.php');
         } elseif ($tipo_usuario  == 'Técnico'){
             // Redirigir al usuario a la página correspondiente
             header("Location: Tecnico.php");
         }else {
-            header("Asesor de servicio.php");
+            header("Location: Asesor_servicios.php");
         }
         
     } else {
-        echo "Inicio de sesión fallido. Usuario o contraseña incorrectos.";
+        echo "<script>alert('Usuario o contraseña incorrectos');</script>";
     }
 
     // Cerrar la conexión
@@ -107,11 +107,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contrasena" required><br>
                     
                     <div id="caja1"> <br>
-                        <a href="./Registrarse.html">¿Aun no tienes cuenta?</a><br>
+                        <a href="Registros.php">¿Aun no tienes cuenta?</a><br>
                         
                     </div>
                     <div id="caja2"> <br>
-                        <a href="RecuperarContraseña.html" id="olvidasteContrasena">¿Olvidaste la contraseña?</a>
+                        <a href="RecuperarClave.php" id="olvidasteContrasena">¿Olvidaste la contraseña?</a>
                     </div>
             
                     <div class="botones"> 

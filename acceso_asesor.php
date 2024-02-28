@@ -16,20 +16,16 @@ if(isset($_POST['opcion'])) {
         $opcion = $_POST['opcion'];
 
         // Construir la consulta SQL según la opción seleccionada
-        if($opcion == "ver_clientes") {
-            $sql = "SELECT * FROM Usuarios WHERE Tipo_usuario = 2";
-        } elseif($opcion == "mantenimientos_realizados") {
-            // Realizar consulta para mostrar mantenimientos realizados
-            $sql = "SELECT Mantenimientos.id, Mantenimientos.vehiculo AS Placa, Usuarios.Nombre AS Responsable, Reparaciones.Detalles_reparacion AS Detalle
-                    FROM Mantenimientos
-                    JOIN Usuarios ON Mantenimientos.Responsable = Usuarios.cedula
-                    JOIN Reparaciones ON Mantenimientos.vehiculo = Reparaciones.Vehiculo";
-        } elseif($opcion == "inventario") {
-            // Realizar consulta para mostrar inventario
-            // Ejemplo: $sql = "SELECT * FROM Inventario";
-        } elseif($opcion == "reporte_ventas") {
-            // Realizar consulta para mostrar reporte de ventas
-            // Ejemplo: $sql = "SELECT * FROM Ventas";
+        if($opcion == "Historial") {
+            $sql = "SELECT 
+                u.Nombre as Dueño,
+                c.Detalles,
+                c.Estado,
+                c.Vehiculo_asignado,
+                c.Precio_total
+            FROM historial
+            JOIN usuarios u ON Cliente = u.cedula
+            JOIN citas c ON Cita_asignada = c.id";
         } else {
             // Opción no válida
             echo "Opción no válida";
