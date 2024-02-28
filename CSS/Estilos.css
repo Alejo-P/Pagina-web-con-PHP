@@ -298,12 +298,14 @@ html{
     padding: 50px 20px; /*Separa los texto de los margenes de las pantallas*/
 }
 
+.metodos h2,
 .contacto h2,
 .servicios h2,
 .acerca h2{
     font-size: 48px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
+    color: white;
     
 }
 .acerca .multimarca{
@@ -983,6 +985,3 @@ button {
     padding: 10px;
     font-size: 15px;
 }
-
-
-

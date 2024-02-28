@@ -14,6 +14,7 @@ if(isset($_POST['opcion'])) {
         die("Conexión fallida: " . $conn->connect_error);
     } else {
         $opcion = $_POST['opcion'];
+
         // Construir la consulta SQL según la opción seleccionada
         if($opcion == "ver_clientes") {
             $sql = "SELECT * FROM Usuarios WHERE Tipo_usuario = 2";
@@ -29,9 +30,13 @@ if(isset($_POST['opcion'])) {
         } elseif($opcion == "reporte_ventas") {
             // Realizar consulta para mostrar reporte de ventas
             // Ejemplo: $sql = "SELECT * FROM Ventas";
+        } elseif($opcion=="Ver mis tareas"){
+            // Modificado para filtrar por el técnico responsable
+            $sql = "SELECT * FROM Citas WHERE Tecnico_responsable = '456789123'";
         } else {
             // Opción no válida
             echo "Opción no válida";
+            exit; // Salir del script si la opción no es válida
         }
 
         // Ejecutar la consulta SQL

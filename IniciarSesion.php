@@ -43,8 +43,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_start();
         $_SESSION['usuario'] = $usuario;
         $_SESSION['tipo_usuario'] = $tipo_usuario;
-        // Redirigir al usuario a la página correspondiente
-        header("Location: Administrador.php");
+        if  ($tipo_usuario == "Clientes"){
+            // Redirigir al usuario a la página correspondiente
+            header('Location: Clientes.php');
+        }
+        else if ($tipo_usuario == "Administrador"){
+            // Redirigir al usuario a la página correspondiente
+            header('Location: Admin.php');
+        } elseif ($tipo_usuario  == 'Técnico'){
+            // Redirigir al usuario a la página correspondiente
+            header("Location: Tecnico.php");
+        }else {
+            header("Asesor de servicio.php");
+        }
+        
     } else {
         echo "Inicio de sesión fallido. Usuario o contraseña incorrectos.";
     }

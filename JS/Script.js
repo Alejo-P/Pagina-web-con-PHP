@@ -1,26 +1,15 @@
 //BOTON CANCELAR
 function Regresar(){
-    window.location.href="Home.html";
-}
-
-// BOTON INGRESAR
-function ingresar() {
-    window.location.href = "./Bienvenido.html";
-   
-    
-}
-
-   
-
-
+    window.location.href="IniciarSesion.php";
+};
 // Boton Registrarse
 function Volver(){
-    window.location.href="IniciarSesion.html";
-}
+    window.location.href="IniciarSesion.php";
+};
 //Boton Salir
-function salir(){
+function Casa(){
     window.location.href="Home.html";
-}
+};
 //Boton del Menu Hamburguesa
 let menuVisible = false;
 //Función que oculta o muestra el menu
@@ -42,7 +31,7 @@ function seleccionar(){
 
 //BOTON VOLVER DE LA PAGINA RECUPERAR CONTRASEÑA
 function volver1(){
-    window.location.href="IniciarSesion.html";
+    window.location.href="IniciarSesion.php";
 }
 
 //BOTON ENVIAR CODIGO DE LA PAGINA RECUPERAR CONTRASEÑA
