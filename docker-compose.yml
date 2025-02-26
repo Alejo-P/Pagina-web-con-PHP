@@ -1,0 +1,37 @@
+# Contenedores para MySQL y PHPmyAdmin
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: full_prestige
+      MYSQL_USER: adminuser
+      MYSQL_PASSWORD: adminuser
+    ports:
+      - "3306:3306"
+    volumes:
+      - fullprestige:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 20s
+      retries: 10
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_USER: adminuser
+      PMA_PASSWORD: adminuser
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
+volumes:
+  fullprestige:

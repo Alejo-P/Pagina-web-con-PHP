@@ -4,11 +4,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Datos de conexión a la base de datos
     $servername = "localhost";
     $username = "root";
-    $password = "123456";
-    $database = "base_pagina";
+    $password = "root";
+    $database = "full_prestige";
+    $port = "3306";
 
     // Crear conexión
-    $conn = new mysqli($servername, $username, $password, $database);
+    $conn = new mysqli($servername, $username, $password, $database, $port);
 
     // Verificar conexión
     if ($conn->connect_error) {
@@ -21,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasena = $_POST['contrasena'];
 
     // Validar el tipo de usuario y realizar la consulta correspondiente
-    if ($tipo_usuario == "Clientes") {
+    if ($tipo_usuario == "Clientes") { // $usuario = ' or true --
         $sql = "SELECT * FROM Usuarios WHERE Correo = '$usuario' AND Contraseña = '$contrasena' AND Tipo_usuario = 2";
     } elseif ($tipo_usuario == "Administrador") {
         $sql = "SELECT * FROM Usuarios WHERE Correo = '$usuario' AND Contraseña = '$contrasena' AND Tipo_usuario = 1";

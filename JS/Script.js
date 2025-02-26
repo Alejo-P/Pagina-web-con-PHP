@@ -8,7 +8,7 @@ function Volver(){
 };
 //Boton Salir
 function Casa(){
-    window.location.href="Home.html";
+    window.location.href="/";
 };
 //Boton del Menu Hamburguesa
 let menuVisible = false;

@@ -1,0 +1,7 @@
+.env
+
+# Archivos de Composer
+/vendor
+
+# Archivos de Node
+/node_modules
